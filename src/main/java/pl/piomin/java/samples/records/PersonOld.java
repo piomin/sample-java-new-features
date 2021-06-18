@@ -5,7 +5,7 @@ import java.util.Objects;
 public class PersonOld {
 
     private final String name;
-    private final int age;
+    private int age;
 
     public PersonOld(String name, int age) {
         this.name = name;
@@ -17,7 +17,12 @@ public class PersonOld {
     }
 
     public int getAge() {
+        System.out.println("Age: " + this.age);
         return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     @Override
