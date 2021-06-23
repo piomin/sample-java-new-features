@@ -116,5 +116,13 @@ public class EclipseCollectionsTest {
             .tap(p -> p.setAge(p.getAge() + 2))
             .select(p -> p.getAge() > 20)
             .getFirst();
+
+        System.out.println("---");
+
+        List<PersonOld> ps = List.of(p1, p2, p3, p4, p5);
+        ps.stream()
+            .filter(p -> p.getAge() > 20)
+            .findFirst()
+            .orElseThrow();
     }
 }
