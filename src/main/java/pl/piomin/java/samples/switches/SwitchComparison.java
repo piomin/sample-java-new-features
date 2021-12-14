@@ -1,5 +1,9 @@
 package pl.piomin.java.samples.switches;
 
+import pl.piomin.java.samples.sealedclasses.Cat;
+import pl.piomin.java.samples.sealedclasses.Dog;
+import pl.piomin.java.samples.sealedclasses.Pet;
+
 public class SwitchComparison {
 
     public String oldSwitch(int number) {
@@ -62,6 +66,14 @@ public class SwitchComparison {
                 break;
         }
         return word;
+    }
+
+    public String newSwitchWithPatternMatching(Pet pet) {
+        return switch (pet) {
+            case Cat c -> "cat";
+            case Dog d -> "dog";
+            default -> "other pet";
+        };
     }
 
 
