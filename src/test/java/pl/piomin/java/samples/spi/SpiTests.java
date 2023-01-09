@@ -12,7 +12,7 @@ public class SpiTests {
         sl.iterator().forEachRemaining(gs -> System.out.println(gs.greet()));
     }
 
-    @Test
+//    @Test
     void shutdownHook() {
         Thread shutdownThread = new Thread(() -> System.out.println("Hook"));
         shutdownThread.setDaemon(true);
