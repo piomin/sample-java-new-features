@@ -6,7 +6,7 @@ public class TextBlockString {
         return "{\n" +
                "     \"firstName\": \"Piotr\",\n" +
                "     \"lastName\": \"Mińkowski\"\n" +
-               "}";
+               "}\n";
     }
 
     public String getNewPrettyPrintJson() {
