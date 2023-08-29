@@ -2,7 +2,7 @@ package pl.piomin.java.samples.stringtemplates;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static java.lang.StringTemplate.STR;
 
 public class StringTemplatesTests {
 
@@ -10,7 +10,7 @@ public class StringTemplatesTests {
     void shouldBePrinted() {
         String firstName = "Piotr";
         String lastName = "Minkowski";
-        String greeting = "Greetings from \{firstName} \{lastName}";
-        assertEquals("Greetings from Piotr Minkowski", greeting);
+        String greetings = STR."Greetings from \{firstName} \{lastName}";
+        assert greetings.equals("Greetings from Piotr Minkowski");
     }
 }
