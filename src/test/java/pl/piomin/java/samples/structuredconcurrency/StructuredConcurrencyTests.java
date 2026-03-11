@@ -12,11 +12,11 @@ public class StructuredConcurrencyTests {
 
     @Test
     void shouldFinish() throws InterruptedException, ExecutionException {
-        try (var scope = new StructuredTaskScope.ShutdownOnFailure()) {
+        try (var scope = StructuredTaskScope.open(StructuredTaskScope.Joiner.<Object>allSuccessfulOrThrow())) {
             Supplier<String> user  = scope.fork(this::findUser);
             Supplier<Integer> order = scope.fork(this::fetchOrder);
 
-            scope.join().throwIfFailed();
+            scope.join();
 
             Response r = new Response(user.get(), order.get());
             assertNotNull(r.getUser());
