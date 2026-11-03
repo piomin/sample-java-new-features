@@ -6,6 +6,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.StructuredTaskScope;
 import java.util.function.Supplier;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class StructuredConcurrencyTests {
@@ -19,8 +20,31 @@ public class StructuredConcurrencyTests {
             scope.join();
 
             Response r = new Response(user.get(), order.get());
-            assertNotNull(r.getUser());
-            assertNotNull(r.getOrder());
+            assertNotNull(r.user());
+            assertNotNull(r.order());
+        }
+    }
+
+    @Test
+    void shouldReturnFirstSuccessful() throws InterruptedException {
+        try (var scope = StructuredTaskScope.open(StructuredTaskScope.Joiner.<String>anySuccessfulResultOrThrow())) {
+            scope.fork(() -> { throw new IllegalStateException("failed"); });
+            scope.fork(this::findUser);
+
+            assertEquals("user1", scope.join());
+        }
+    }
+
+    @Test
+    void shouldAwaitAll() throws InterruptedException {
+        try (var scope = StructuredTaskScope.open(StructuredTaskScope.Joiner.<Object>awaitAll())) {
+            Supplier<String> user = scope.fork(this::findUser);
+            Supplier<Integer> order = scope.fork(this::fetchOrder);
+
+            scope.join();
+
+            assertEquals("user1", user.get());
+            assertEquals(100, order.get());
         }
     }
 
@@ -32,21 +56,5 @@ public class StructuredConcurrencyTests {
         return 100;
     }
 
-    class Response {
-        String user;
-        Integer order;
-
-        public Response(String user, Integer order) {
-            this.user = user;
-            this.order = order;
-        }
-
-        public String getUser() {
-            return user;
-        }
-
-        public Integer getOrder() {
-            return order;
-        }
-    }
+    record Response(String user, Integer order) {}
 }
