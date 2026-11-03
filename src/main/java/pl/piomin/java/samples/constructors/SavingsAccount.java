@@ -1,9 +1,7 @@
 package pl.piomin.java.samples.constructors;
 
 /**
- * Flexible constructor bodies (JEP 513), final in Java 25.
- * Statements are now allowed before {@code super(...)}, so arguments can be validated
- * directly in the constructor. The code before {@code super(...)} cannot use {@code this}.
+ * Flexible constructor bodies (JEP 513, Java 25): statements are allowed before {@code super(...)}, but cannot use {@code this}.
  */
 public class SavingsAccount extends Account {
 

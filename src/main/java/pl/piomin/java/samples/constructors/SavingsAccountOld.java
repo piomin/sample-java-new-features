@@ -1,8 +1,7 @@
 package pl.piomin.java.samples.constructors;
 
 /**
- * Before Java 25 {@code super(...)} had to be the first statement of a constructor,
- * so validation had to be done in static helper methods called inside its arguments.
+ * Before Java 25 validation had to be done in static methods called inside {@code super(...)}.
  */
 public class SavingsAccountOld extends Account {
 
