@@ -1,13 +1,11 @@
 package pl.piomin.java.samples.constructors;
 
-import java.math.BigDecimal;
-
 public class Account {
 
     private final String owner;
-    private final BigDecimal balance;
+    private final int balance;
 
-    public Account(String owner, BigDecimal balance) {
+    public Account(String owner, int balance) {
         this.owner = owner;
         this.balance = balance;
     }
@@ -16,7 +14,7 @@ public class Account {
         return owner;
     }
 
-    public BigDecimal getBalance() {
+    public int getBalance() {
         return balance;
     }
 }
