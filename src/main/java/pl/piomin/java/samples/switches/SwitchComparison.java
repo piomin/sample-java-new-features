@@ -68,11 +68,16 @@ public class SwitchComparison {
         return word;
     }
 
+    /**
+     * Pattern matching for switch (JEP 441, Java 21): type patterns, guards ({@code when}) and {@code case null}.
+     * There is no {@code default}, because the compiler checks that the sealed {@link Pet} hierarchy is covered.
+     */
     public String newSwitchWithPatternMatching(Pet pet) {
         return switch (pet) {
+            case null -> "no pet";
             case Cat c -> "cat";
+            case Dog d when d.getAge() < 2 -> "puppy";
             case Dog d -> "dog";
-            default -> "other pet";
         };
     }
 
