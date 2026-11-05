@@ -16,8 +16,8 @@ public class AmbiguousImportExample {
         return List.of("a", "bb", "ccc");
     }
 
-    public java.awt.List awtList() {
-        return new java.awt.List();
+    public Class<java.awt.List> awtListType() {
+        return java.awt.List.class;
     }
 
     // Color comes only from java.desktop (java.awt.Color), so no ambiguity here

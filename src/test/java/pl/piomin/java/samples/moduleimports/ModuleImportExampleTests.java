@@ -32,7 +32,7 @@ public class ModuleImportExampleTests {
     void shouldResolveAmbiguousList() {
         var ambiguous = new AmbiguousImportExample();
         Assertions.assertEquals(3, ambiguous.names().size());
-        Assertions.assertInstanceOf(java.awt.List.class, ambiguous.awtList());
+        Assertions.assertEquals(java.awt.List.class, ambiguous.awtListType());
         Assertions.assertEquals(java.awt.Color.RED, ambiguous.red());
     }
 }
