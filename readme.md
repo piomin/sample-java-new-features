@@ -8,3 +8,9 @@
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=piomin_sample-java-new-features&metric=ncloc)](https://sonarcloud.io/dashboard?id=piomin_sample-spring-microservices-new)
 
 Examples illustrating the most interesting developer-friendly features after Java 8 described in the following article: [New Developer Friendly Features After Java 8](https://piotrminkowski.com/2021/02/01/new-developer-friendly-features-after-java-8/)
+
+### Primitive types in patterns (Java 25, preview)
+
+> **Preview feature:** [JEP 507](https://openjdk.org/jeps/507) (third preview in Java 25) requires `--enable-preview`, which is already configured in `pom.xml` for compilation and tests.
+
+Primitive type patterns in `instanceof` and `switch` (`int`, `long`, `double`, safe conversions): [PrimitivePatterns](src/main/java/pl/piomin/java/samples/primitivepatterns/PrimitivePatterns.java).
