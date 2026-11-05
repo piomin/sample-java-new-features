@@ -7,21 +7,6 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=piomin_sample-java-new-features&metric=coverage)](https://sonarcloud.io/dashboard?id=piomin_sample-spring-microservices-new)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=piomin_sample-java-new-features&metric=ncloc)](https://sonarcloud.io/dashboard?id=piomin_sample-spring-microservices-new)
 
-Examples illustrating the most interesting developer-friendly features after Java 8 described in the following article: [New Developer Friendly Features After Java 8](https://piotrminkowski.com/2021/02/01/new-developer-friendly-features-after-java-8/)
-
-## Compact source files and instance main methods (Java 25)
-
-JEP 512 example in `src/main/source-launcher/Hello.java` (kept outside the Maven compile roots). Run it directly with the source launcher:
-
-```shell
-java src/main/source-launcher/Hello.java
-```
-
-A multi-file source program (Java 22, JEP 458) is in `src/main/source-launcher/multifile`:
-
-```shell
-java src/main/source-launcher/multifile/Main.java
-```
 Examples illustrating the most interesting developer-friendly features after Java 8. The original article, covering the Java 9-15 features, is [New Developer Friendly Features After Java 8](https://piotrminkowski.com/2021/02/01/new-developer-friendly-features-after-java-8/). The project has since been upgraded to Java 25 and extended with newer features.
 
 ## Feature index
@@ -43,10 +28,16 @@ Examples illustrating the most interesting developer-friendly features after Jav
 | Day period pattern `B` in `DateTimeFormatter` | 16 | Final | [test](src/test/java/pl/piomin/java/samples/delay/DelayTest.java) |
 | Pattern matching for `switch` | 21 | Final | [`switches/SwitchComparison`](src/main/java/pl/piomin/java/samples/switches/SwitchComparison.java), [test](src/test/java/pl/piomin/java/samples/switches/SwitchComparisonTests.java) |
 | Sequenced collections | 21 | Final | [test](src/test/java/pl/piomin/java/samples/collections/SequencedCollectionTests.java) |
+| Virtual threads | 21 | Final | [`virtualthreads/ThreadComparison`](src/main/java/pl/piomin/java/samples/virtualthreads/ThreadComparison.java), [test](src/test/java/pl/piomin/java/samples/virtualthreads/ThreadComparisonTests.java) |
+| Record patterns and nested deconstruction (JEP 440) | 21 | Final | [`records/RecordPatterns`](src/main/java/pl/piomin/java/samples/records/RecordPatterns.java), [test](src/test/java/pl/piomin/java/samples/records/RecordPatternsTests.java) |
 | `EnumSet` (`range`, `complementOf`) | (classic) | Final | [test](src/test/java/pl/piomin/java/samples/enums/EnumSetTest.java) |
+| Unnamed variables and patterns `_` (JEP 456) | 22 | Final | [`unnamed/UnnamedVariables`](src/main/java/pl/piomin/java/samples/unnamed/UnnamedVariables.java), [test](src/test/java/pl/piomin/java/samples/unnamed/UnnamedVariablesTests.java) |
 | Stream Gatherers (JEP 485) | 24 | Final | [`gatherers/GatherersComparison`](src/main/java/pl/piomin/java/samples/gatherers/GatherersComparison.java), [test](src/test/java/pl/piomin/java/samples/gatherers/GatherersComparisonTests.java) |
+| Class-File API (JEP 484) | 24 | Final | [`classfile/ClassFileExample`](src/main/java/pl/piomin/java/samples/classfile/ClassFileExample.java), [test](src/test/java/pl/piomin/java/samples/classfile/ClassFileExampleTests.java) |
 | Flexible constructor bodies (JEP 513) | 25 | Final | [`constructors/SavingsAccount`](src/main/java/pl/piomin/java/samples/constructors/SavingsAccount.java), [test](src/test/java/pl/piomin/java/samples/constructors/SavingsAccountTests.java) |
 | Scoped values (JEP 506) | 25 | Final | [`scopedvalues/ScopedValueExample`](src/main/java/pl/piomin/java/samples/scopedvalues/ScopedValueExample.java), [test](src/test/java/pl/piomin/java/samples/scopedvalues/ScopedValueExampleTests.java) |
+| Module import declarations (JEP 511) | 25 | Final | [`moduleimports/`](src/main/java/pl/piomin/java/samples/moduleimports), [test](src/test/java/pl/piomin/java/samples/moduleimports/ModuleImportExampleTests.java) |
+| Compact source files and instance main methods (JEP 512), multi-file source launcher (JEP 458) | 25 (22) | Final | [`Hello.java`](src/main/source-launcher/Hello.java), [`multifile/`](src/main/source-launcher/multifile), [test](src/test/java/pl/piomin/java/samples/compactsource/CompactSourceFileTests.java); run with `java src/main/source-launcher/Hello.java` |
 | Structured concurrency (JEP 505) | 25 | **Preview** (`--enable-preview`) | [test](src/test/java/pl/piomin/java/samples/structuredconcurrency/StructuredConcurrencyTests.java); also used in `ScopedValueExample` |
 
 Features marked **Preview** require `--enable-preview` at compile time and at run time. Status is as of JDK 25. Java version `(classic)` means the example is not tied to a recent language change.
