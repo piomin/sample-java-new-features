@@ -8,3 +8,5 @@
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=piomin_sample-java-new-features&metric=ncloc)](https://sonarcloud.io/dashboard?id=piomin_sample-spring-microservices-new)
 
 Examples illustrating the most interesting developer-friendly features after Java 8 described in the following article: [New Developer Friendly Features After Java 8](https://piotrminkowski.com/2021/02/01/new-developer-friendly-features-after-java-8/)
+
+**Preview:** `StableValue` examples (JEP 502, `pl.piomin.java.samples.stablevalues`) use a preview API in Java 25 and require `--enable-preview`.
