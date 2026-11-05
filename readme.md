@@ -8,3 +8,17 @@
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=piomin_sample-java-new-features&metric=ncloc)](https://sonarcloud.io/dashboard?id=piomin_sample-spring-microservices-new)
 
 Examples illustrating the most interesting developer-friendly features after Java 8 described in the following article: [New Developer Friendly Features After Java 8](https://piotrminkowski.com/2021/02/01/new-developer-friendly-features-after-java-8/)
+
+## Compact source files and instance main methods (Java 25)
+
+JEP 512 example in `src/main/source-launcher/Hello.java` (kept outside the Maven compile roots). Run it directly with the source launcher:
+
+```shell
+java src/main/source-launcher/Hello.java
+```
+
+A multi-file source program (Java 22, JEP 458) is in `src/main/source-launcher/multifile`:
+
+```shell
+java src/main/source-launcher/multifile/Main.java
+```
