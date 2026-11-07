@@ -9,9 +9,6 @@
 
 Examples illustrating the most interesting developer-friendly features after Java 8 described in the following article: [New Developer Friendly Features After Java 8](https://piotrminkowski.com/2021/02/01/new-developer-friendly-features-after-java-8/)
 
-**Preview:** `StableValue` examples (JEP 502, `pl.piomin.java.samples.stablevalues`) use a preview API in Java 25 and require `--enable-preview`.
-Examples illustrating the most interesting developer-friendly features after Java 8. The original article, covering the Java 9-15 features, is [New Developer Friendly Features After Java 8](https://piotrminkowski.com/2021/02/01/new-developer-friendly-features-after-java-8/). The project has since been upgraded to Java 25 and extended with newer features.
-
 ## Feature index
 
 | Feature | Java version | Status | Source / test |
